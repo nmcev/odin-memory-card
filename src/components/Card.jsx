@@ -3,7 +3,7 @@ const Card = ({ name, imgURL }) => {
     return (
         <div className="h-80 w-52 grid grid-rows-6 rounded-xl overflow-hidden">
             <div className=" bg-slate-400 row-span-5">
-                <img src={imgURL} className=" object-cover w-full h-full object-top" alt="nolan" />
+                <img src={imgURL} className=" object-cover w-full h-full object-top" alt={name} />
             </div>
             
             <div className=" bg-slate-100 row-span-1 flex items-center justify-center ">
