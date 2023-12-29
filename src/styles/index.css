@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300&display=swap');
+@font-face {
+  font-family: 'starWars';
+  src: url('/src/assets/fonts/starwars.ttf');
+}
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+}
+#root {
+  display: grid;
+  grid-template-rows:  repeat(6, 1fr);
+  place-items: center;
+  background-image: url('../assets/images/background.jpg');
+  background-size: cover;
+  background-position: center;
+  width: 100vw;
+  height: 100vh;
+}
+
