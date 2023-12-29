@@ -1,19 +1,15 @@
 const fetchFromAPI = async () => {
   const namesANDurls = [];
-  const maxRetries = 3;
   const uniqueRandomNumbers = new Set();
+  const numberOFCharacters = 10;
 
-  try {
-    while (uniqueRandomNumbers.size < 8) {
+    while (uniqueRandomNumbers.size < numberOFCharacters) {
       const random = Math.floor(Math.random() * 83) + 1;
       uniqueRandomNumbers.add(random);
     }
 
     for (const random of uniqueRandomNumbers) {
-      let retryCount = 0;
-      let success = false;
 
-      while (!success && retryCount < maxRetries) {
         try {
           const response = await fetch(`https://swapi.dev/api/people/${random}`);
           
@@ -26,20 +22,13 @@ const fetchFromAPI = async () => {
 
           if (results.name !== undefined) {
             namesANDurls.push({ name: results.name, url: imageUrl });
-            success = true;
           }
         } catch (error) {
           console.error('Error fetching Star Wars names:', error);
-          retryCount++;
         }
-      }
     }
 
-    return namesANDurls;
-  } catch (error) {
-    console.error('Error fetching Star Wars names:', error);
-    return [];
-  }
+  return namesANDurls;
 };
 
 export default fetchFromAPI;
