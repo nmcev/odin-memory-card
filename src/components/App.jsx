@@ -16,14 +16,12 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
 
 
-  const slicedImages = imageURLS.slice(0, 8); // returns first 8 images from the array of images
   
   useEffect(() => { 
   const fetchDataAndShuffle = async () => {
     try {
       const data = await fetchFromAPI();
-      const shuffledData = shuffleImages(data);
-      setImageURLS(shuffledData);
+      setImageURLS(shuffleImages(data));
       setIsLoading(false);
     } catch (error) {
       console.error('Error fetching data:', error);
@@ -85,7 +83,7 @@ function App() {
     }
 
     setClicked([...clicked, name]);
-    setImageURLS(shuffleImages(imageURLS))
+    setImageURLS(shuffleImages(imageURLS));
   };
 
   const handlePlayAgain = async () => {
@@ -123,7 +121,7 @@ function App() {
 
        {imageURLS.length > 0 && isWinner === null &&   (
        <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 sa gap-8">
-         {slicedImages.map((image, i) => (
+         {imageURLS.map((image, i) => (
            <article onClick={handleImageClick} key={i} className="w-full cursor-pointer sm:w-1/2 md:w-1/3 lg:w-1/4">
               <Card name={image.name} imgURL={image.url} />
              </article>

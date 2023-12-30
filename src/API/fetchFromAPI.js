@@ -1,7 +1,7 @@
 const fetchFromAPI = async () => {
   const namesANDurls = [];
   const uniqueRandomNumbers = new Set();
-  const numberOFCharacters = 10;
+  const numberOFCharacters = 8;
 
     while (uniqueRandomNumbers.size < numberOFCharacters) {
       const random = Math.floor(Math.random() * 83) + 1;
@@ -13,10 +13,7 @@ const fetchFromAPI = async () => {
         try {
           const response = await fetch(`https://swapi.dev/api/people/${random}`);
           
-          if (!response.ok) {
-            throw new Error('Failed to fetch data');
-          }
-
+ 
           const results = await response.json();
           const imageUrl = `https://starwars-visualguide.com/assets/img/characters/${random}.jpg`;
 
