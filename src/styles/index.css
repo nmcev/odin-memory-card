@@ -13,16 +13,16 @@ body {
     margin: 0;
     padding: 0;
     font-size: 16px;
+    background-image: url('../assets/images/background.jpg');
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 #root {
   display: grid;
   grid-template-rows:  repeat(6, 1fr);
   place-items: center;
-  background-image: url('../assets/images/background.jpg');
-  background-position: center;
-  background-attachment: fixed;
-  background-size: cover;
-  background-repeat: no-repeat;
   width: 100vw;
   height: 100vh;
 }
