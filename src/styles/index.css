@@ -19,8 +19,10 @@ body {
   grid-template-rows:  repeat(6, 1fr);
   place-items: center;
   background-image: url('../assets/images/background.jpg');
-  background-size: cover;
   background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
   width: 100vw;
   height: 100vh;
 }
