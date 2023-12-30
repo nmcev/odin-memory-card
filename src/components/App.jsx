@@ -5,7 +5,8 @@ import Card from './Card'
 import ScoreBoard from './Scoreboard';
 import GameOutCome from './GameOutCome';
 import Footer from './Footer';
-
+import rockRoll from '../assets/sounds/rock.mp3'
+import yodaSound from '../assets/sounds/yoda.mp3'
 
 function App() {
   const [imageURLS, setImageURLS] = useState([]);
@@ -33,28 +34,20 @@ function App() {
 }, []);
 
   useEffect(() => { 
-    const rollRock = new Audio('/src/assets/sounds/rock.mp3');
-    const yoda = new Audio('/src/assets/sounds/yoda.mp3');
-    const bg = new Audio('https://soundfxcenter.com/television/star-trek/8d82b5_Star_Trek_Closing_Credits_Theme_Song.mp3');
+    const audio = new Audio(rockRoll)
+    const audio2 = new Audio(yodaSound)
+
 
     if (isWinner === true) {
-      rollRock.play();
-      rollRock.loop = true;
-      
+      audio.play().loop = true;
+  
     } else if (isWinner === false) {
-      setTimeout(() => {
-        yoda.play();
-      }, 500);
+      audio2.play()
+    } 
 
-    } else {
-      bg.play();
-      bg.loop = true;
-      bg.volume = 0.01;
-    }
-    
     return () => {
-      rollRock.pause();
-      yoda.pause();
+      audio.pause();
+      audio2.pause();
     }
   }, [isWinner]);
 
