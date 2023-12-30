@@ -39,7 +39,8 @@ function App() {
 
 
     if (isWinner === true) {
-      audio.play().loop = true;
+      audio.play();
+      audio.loop = true;
   
     } else if (isWinner === false) {
       audio2.play()
@@ -70,7 +71,7 @@ function App() {
     setScore(score + 1);
 
     if (score === imageURLS.length - 1) {
-      setHighScore(score >= highScore && score + 1);
+      setHighScore(score >= highScore ? score + 1 : highScore);
       setScore(0);
       setIsWinner(true);
     }
