@@ -114,7 +114,7 @@ function App() {
 
 
        {imageURLS.length > 0 && isWinner === null &&   (
-       <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 sa gap-8 pb-4">
+       <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 sa gap-8 pb-1">
          {imageURLS.map((image, i) => (
            <article onClick={handleImageClick} key={i} className="w-full cursor-pointer sm:w-1/2 md:w-1/3 lg:w-1/4">
               <Card name={image.name} imgURL={image.url} />
