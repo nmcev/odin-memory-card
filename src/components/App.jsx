@@ -106,8 +106,8 @@ function App() {
             <h2 className='text-xl text-gray-100 font-custom2 font-bold pt-2'>Click on an image to earn points, but don&#39;t click on any more than once!</h2>
          </div>
   
-         <div className='order-1 lg:order-2'>
-          <ScoreBoard score={score} bestScore={highScore}/>
+        <div className='order-1 lg:order-2'>
+          {!isLoading && <ScoreBoard score={score} bestScore={highScore} />}
             </div>
      </div>
 
