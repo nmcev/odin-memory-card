@@ -1,7 +1,7 @@
 const fetchFromAPI = async () => {
   const namesANDurls = [];
   const uniqueRandomNumbers = new Set();
-  const numberOFCharacters = 8;
+  const numberOFCharacters = 10;
 
     while (uniqueRandomNumbers.size < numberOFCharacters) {
       const random = Math.floor(Math.random() * 83) + 1;
@@ -25,7 +25,7 @@ const fetchFromAPI = async () => {
         }
     }
 
-  return namesANDurls;
+  return namesANDurls.slice(0, 8);
 };
 
 export default fetchFromAPI;
