@@ -136,7 +136,7 @@ function App() {
         }
 
 
-      <footer className=" bg-slate-600 w-full flex sticky justify-center items-center bottom-0  gap-1">
+      <footer className=" bg-slate-600 w-full flex fixed justify-center items-center bottom-0  gap-1">
         <Footer />
       </footer>
 
