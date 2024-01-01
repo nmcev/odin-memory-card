@@ -126,14 +126,9 @@ function App() {
       { isLoading && <LoadingAnimation />}
 
 
-      {isWinner === true && (
+      {(isWinner === true || isWinner === false) && (
         <GameOutCome isWin={isWinner} handlePlayAgain={handlePlayAgain} />
       )}
-      
-      {isWinner === false &&  (
-        <GameOutCome isWin={isWinner} handlePlayAgain={handlePlayAgain} />
-      )
-        }
 
 
       <footer className=" bg-slate-600 w-full flex fixed justify-center items-center bottom-0  gap-1">
