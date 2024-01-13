@@ -18,13 +18,11 @@ body {
     background-attachment: fixed;
     background-size: cover;
     background-repeat: no-repeat;
-    overflow-x: hidden;
 }
 #root {
   display: grid;
   grid-template-rows:  repeat(6, 1fr);
   place-items: center;
   width: 100vw;
-  height: 125vh;
 }
 
