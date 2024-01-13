@@ -134,7 +134,8 @@ function App() {
   
         <div className='order-1 lg:order-2'>
           {!isLoading && (
-           body.style.overflowY = userOS === 'windows' || userOS === 'Mac OS'? 'scroll' : 'hidden',
+            body.style.overflowY = userOS === 'windows' || userOS === 'Mac OS' ? 'scroll' : 'hidden',
+            body.style.overflowX = 'hidden',
          <ScoreBoard score={score} bestScore={highScore} />)}
             </div>
      </div>
