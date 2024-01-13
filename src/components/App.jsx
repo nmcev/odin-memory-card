@@ -97,6 +97,32 @@ function App() {
 
   };
 
+  
+  const getOperatingSystem = () => {
+    const userAgent = window.navigator.userAgent;
+
+    if (userAgent.includes('Windows')) {
+      return 'windows';
+    } else if (userAgent.includes('Macintosh') || userAgent.includes('Mac OS')) {
+      return 'Mac OS';
+    } else if (userAgent.includes('Linux')) {
+      return 'Linux';
+    } else {
+      return 'Unknown';
+    }
+  };
+
+  let body = document.querySelector('body');
+  let root = document.querySelector('#root');
+  const userOS = getOperatingSystem();
+
+  if (userOS === 'windows') {
+    root.style.height = '125vh'
+  } else if (userOS === 'Mac OS') {
+    root.style.height = '125vh'
+  } else if (userOS === 'Linux') {
+    root.style.height = '100vh'
+  }
   return (
     <>
       
@@ -107,14 +133,19 @@ function App() {
          </div>
   
         <div className='order-1 lg:order-2'>
-          {!isLoading && <ScoreBoard score={score} bestScore={highScore} />}
+          {!isLoading && (
+           body.style.overflowY = userOS === 'windows' || userOS === 'Mac OS'? 'scroll' : 'hidden',
+         <ScoreBoard score={score} bestScore={highScore} />)}
             </div>
      </div>
 
 
 
        {imageURLS.length > 0 && isWinner === null &&   (
-       <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 sa gap-8 pb-12">
+        <section className={`grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8
+        ${userOS === "windows" || userOS === "Mac OS" ? "pb-12" : "pb-1"}
+        `}
+        >
          {imageURLS.map((image, i) => (
            <article onClick={handleImageClick} key={i} className="w-full cursor-pointer">
               <Card name={image.name} imgURL={image.url} />
@@ -123,7 +154,10 @@ function App() {
         </section>
         )}
 
-      { isLoading && <LoadingAnimation />}
+      {isLoading && (
+        body.style.overflowY = userOS === 'windows' || userOS === 'Mac OS' || userOS === 'Linux' ? 'hidden' : 'scroll',
+        < LoadingAnimation />
+        )}
 
 
       {(isWinner === true || isWinner === false) && (
