@@ -24,6 +24,5 @@ body {
   grid-template-rows:  repeat(6, 1fr);
   place-items: center;
   width: 100vw;
-  height: 100vh;
 }
 
