@@ -1,4 +1,5 @@
-export default function ScoreBoard({score, bestScore}) {
+import PropTypes from 'prop-types';
+export default function ScoreBoard({ score, bestScore }) {
     return (
         <div className=" w-60 h-28">
             <div className=" bg-gray-100 h-1/2 rounded-xl flex justify-center items-center opacity-65">
@@ -9,3 +10,8 @@ export default function ScoreBoard({score, bestScore}) {
         </div>
     )
 }
+
+ScoreBoard.propTypes = {
+    score: PropTypes.number.isRequired,
+    bestScore: PropTypes.number.isRequired,
+};

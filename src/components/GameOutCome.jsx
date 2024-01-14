@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 function GameOutCome({ isWin, handlePlayAgain }) {
     
     const rock = "https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExZmlqNnV5N2VpOW9sMncwNjRsYzA2NTFzMWEzdGt5bjlya2ttejB3NSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Ju7l5y9osyymQ/giphy.gif";
@@ -19,4 +20,8 @@ function GameOutCome({ isWin, handlePlayAgain }) {
   );
 } 
 
+GameOutCome.propTypes = {
+    isWin: PropTypes.bool.isRequired,
+    handlePlayAgain: PropTypes.func.isRequired,
+};
 export default GameOutCome;
