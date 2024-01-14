@@ -126,7 +126,7 @@ function App() {
   return (
     <>
       
-      <div className=' w-full flex flex-col lg:flex-row  lg:justify-center lg:items-center pt-4 pb-4'>
+      <header className=' w-full flex flex-col lg:flex-row  lg:justify-center lg:items-center pt-4 pb-4'>
          <div className='order-2 lg:order-1 text-center'>
             <h1 className='text-3xl text-gray-100 font-custom pt-4'>Star Wars Memory Cards</h1>
             <h2 className='text-xl text-gray-100 font-custom2 font-bold pt-2'>Click on an image to earn points, but don&#39;t click on any more than once!</h2>
@@ -138,12 +138,12 @@ function App() {
             body.style.overflowX = 'hidden',
          <ScoreBoard score={score} bestScore={highScore} />)}
             </div>
-     </div>
+     </header>
 
 
 
        {imageURLS.length > 0 && isWinner === null &&   (
-        <section className={`grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8
+        <main className={`grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8
         ${userOS === "windows" || userOS === "Mac OS" ? "pb-12" : "pb-1"}
         `}
         >
@@ -152,7 +152,7 @@ function App() {
               <Card name={image.name} imgURL={image.url} />
              </article>
            ))}
-        </section>
+        </main>
         )}
 
       {isLoading && (
