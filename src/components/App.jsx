@@ -143,7 +143,7 @@ function App() {
 
 
        {imageURLS.length > 0 && isWinner === null &&   (
-        <section className={`grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8
+        <main className={`grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8
         ${userOS === "windows" || userOS === "Mac OS" ? "pb-12" : "pb-1"}
         `}
         >
@@ -152,7 +152,7 @@ function App() {
               <Card name={image.name} imgURL={image.url} />
              </article>
            ))}
-        </section>
+        </main>
         )}
 
       {isLoading && (
