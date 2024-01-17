@@ -2,11 +2,11 @@ import {useEffect, useState } from 'react';
 import fetchFromAPI from '../API/fetchFromAPI';
 import LoadingAnimation from './Loading';
 import Card from './Card'
-import ScoreBoard from './Scoreboard';
 import GameOutCome from './GameOutCome';
 import Footer from './Footer';
 import rockRoll from '../assets/sounds/rock.mp3'
 import yodaSound from '../assets/sounds/yoda.mp3'
+import Header from './Header';
 
 function App() {
   const [imageURLS, setImageURLS] = useState([]);
@@ -126,19 +126,7 @@ function App() {
   return (
     <>
       
-      <div className=' w-full flex flex-col lg:flex-row  lg:justify-center lg:items-center pt-4 pb-4'>
-         <div className='order-2 lg:order-1 text-center'>
-            <h1 className='text-3xl text-gray-100 font-custom pt-4'>Star Wars Memory Cards</h1>
-            <h2 className='text-xl text-gray-100 font-custom2 font-bold pt-2'>Click on an image to earn points, but don&#39;t click on any more than once!</h2>
-         </div>
-  
-        <div className='order-1 lg:order-2'>
-          {!isLoading && (
-            body.style.overflowY = userOS === 'windows' || userOS === 'Mac OS' ? 'scroll' : 'hidden',
-            body.style.overflowX = 'hidden',
-         <ScoreBoard score={score} bestScore={highScore} />)}
-            </div>
-     </div>
+      <Header  isLoading={isLoading} score={score} highScore={highScore}  userOS={userOS} />
 
 
 
